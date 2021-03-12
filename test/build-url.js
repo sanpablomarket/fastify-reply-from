@@ -15,6 +15,12 @@ test('should produce valid URL', (t) => {
   t.equal(url.href, 'http://localhost/hi')
 })
 
+test('should produce valid URL', (t) => {
+  t.plan(1)
+  const url = buildURL('/test?query=1', 'http://localhost:8000/test')
+  t.equal(url.href, 'http://localhost:8000/test?query=1')
+})
+
 test('should return same source when base is not specified', (t) => {
   t.plan(1)
   const url = buildURL('http://localhost/hi')
